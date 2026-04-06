@@ -1,4 +1,8 @@
+import { useApp } from '../../context/AppContext';
+
 function SpendingCategory() {
+  const { getCurrencySymbol } = useApp();
+  
   return (
     <div className="col-span-12 lg:col-span-4 bg-surface-container-lowest dark:bg-stone-900 rounded-xl p-6 shadow-[0_20px_40px_-12px_rgba(25,28,27,0.06)] flex flex-col justify-between">
       <div>
@@ -12,7 +16,7 @@ function SpendingCategory() {
           <div>
             <p className="text-2xl font-bold font-manrope dark:text-stone-200">Dining & Drinks</p>
             <p className="text-tertiary font-semibold">
-              $1,240.50 <span className="text-stone-400 font-normal text-sm">this month</span>
+              {getCurrencySymbol()}1,240.50 <span className="text-stone-400 font-normal text-sm">this month</span>
             </p>
           </div>
         </div>

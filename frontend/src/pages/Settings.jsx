@@ -2,12 +2,11 @@ import { useState } from 'react';
 import { useApp } from '../context/AppContext';
 
 function Settings() {
-  const { darkMode, toggleDarkMode, userRole } = useApp();
+  const { darkMode, toggleDarkMode, userRole, currency, setCurrency } = useApp();
   const [formData, setFormData] = useState({
     fullName: 'John Doe',
     email: 'john.doe@fintrack.com',
-    phone: '+1 (555) 123-4567',
-    currency: 'USD',
+    phone: '+91 98765 43210',
     language: 'English',
     notifications: true,
     emailAlerts: true,
@@ -83,14 +82,15 @@ function Settings() {
                   Currency
                 </label>
                 <select
-                  value={formData.currency}
-                  onChange={(e) => handleChange('currency', e.target.value)}
+                  value={currency}
+                  onChange={(e) => setCurrency(e.target.value)}
                   className="w-full bg-surface-container-high dark:bg-stone-800 border-none rounded-sm px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 transition-all border-b-2 border-transparent focus:border-primary cursor-pointer dark:text-stone-200"
                 >
-                  <option>USD</option>
-                  <option>EUR</option>
-                  <option>GBP</option>
-                  <option>JPY</option>
+                  <option value="INR">INR (₹) - Indian Rupee</option>
+                  <option value="USD">USD ($) - US Dollar</option>
+                  <option value="EUR">EUR (€) - Euro</option>
+                  <option value="GBP">GBP (£) - British Pound</option>
+                  <option value="JPY">JPY (¥) - Japanese Yen</option>
                 </select>
               </div>
               <div className="space-y-2">
@@ -106,6 +106,7 @@ function Settings() {
                   <option>Spanish</option>
                   <option>French</option>
                   <option>German</option>
+                  <option>Hindi</option>
                 </select>
               </div>
             </div>

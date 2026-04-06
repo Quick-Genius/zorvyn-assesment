@@ -17,7 +17,7 @@ function AllocationDonut() {
           <circle className="text-tertiary" cx="96" cy="96" r="80" fill="transparent" stroke="currentColor" strokeDasharray="502.4" strokeDashoffset="427.04" strokeWidth="20" style={{ transform: 'rotate(234deg)', transformOrigin: 'center' }}></circle>
         </svg>
         <div className="absolute flex flex-col items-center">
-          <span className="text-3xl font-bold font-manrope dark:text-stone-200">$4,820</span>
+          <span className="text-3xl font-bold font-manrope dark:text-stone-200">₹4,820</span>
           <span className="text-xs text-stone-400 uppercase tracking-widest">Total Exp.</span>
         </div>
       </div>

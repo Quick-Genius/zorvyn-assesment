@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useApp } from '../../context/AppContext';
 
 function AddTransactionModal({ isOpen, onClose }) {
+  const { getCurrencySymbol } = useApp();
   const [formData, setFormData] = useState({
     date: '',
     amount: '',
@@ -48,7 +50,7 @@ function AddTransactionModal({ isOpen, onClose }) {
             <div className="space-y-2">
               <label className="text-xs font-bold tracking-widest uppercase text-outline dark:text-stone-400">Amount</label>
               <div className="relative">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-sm text-outline dark:text-stone-400">$</span>
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-sm text-outline dark:text-stone-400">{getCurrencySymbol()}</span>
                 <input 
                   className="w-full bg-surface-container-high dark:bg-stone-800 border-none rounded-sm pl-8 pr-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 transition-all border-b-2 border-transparent focus:border-primary dark:text-stone-200 dark:placeholder-stone-500" 
                   placeholder="0.00" 

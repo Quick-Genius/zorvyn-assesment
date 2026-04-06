@@ -24,12 +24,28 @@ export const weeklyChartData = [
   { month: 'Week 8', income: 19, expenses: 14 },
 ];
 
-export const expenseCategories = [
+export const dailyExpenseData = [
+  { name: 'Entertainments', percentage: 46, color: 'bg-red-500', amount: 280 },
+  { name: 'Platform', percentage: 56, color: 'bg-sky-600', amount: 340 },
+  { name: 'Shopping', percentage: 48, color: 'bg-orange-500', amount: 295 },
+  { name: 'Food & Health', percentage: 63, color: 'bg-green-700', amount: 385 },
+];
+
+export const weeklyExpenseData = [
   { name: 'Entertainments', percentage: 46, color: 'bg-red-500', amount: 1980 },
   { name: 'Platform', percentage: 56, color: 'bg-sky-600', amount: 2408 },
   { name: 'Shopping', percentage: 48, color: 'bg-orange-500', amount: 2064 },
   { name: 'Food & Health', percentage: 63, color: 'bg-green-700', amount: 2709 },
 ];
+
+export const monthlyExpenseData = [
+  { name: 'Entertainments', percentage: 46, color: 'bg-red-500', amount: 8420 },
+  { name: 'Platform', percentage: 56, color: 'bg-sky-600', amount: 10234 },
+  { name: 'Shopping', percentage: 48, color: 'bg-orange-500', amount: 8772 },
+  { name: 'Food & Health', percentage: 63, color: 'bg-green-700', amount: 11538 },
+];
+
+export const expenseCategories = weeklyExpenseData;
 
 export const annualCashflowData = [
   { month: 'Jan', income: 60, expenses: 40 },
@@ -44,4 +60,29 @@ export const annualCashflowData = [
   { month: 'Oct', income: 88, expenses: 60 },
   { month: 'Nov', income: 65, expenses: 80 },
   { month: 'Dec', income: 100, expenses: 70 },
+];
+
+export const dailyCashflowData = [
+  { month: 'Mon', income: 15, expenses: 12 },
+  { month: 'Tue', income: 18, expenses: 14 },
+  { month: 'Wed', income: 20, expenses: 16 },
+  { month: 'Thu', income: 17, expenses: 13 },
+  { month: 'Fri', income: 22, expenses: 18 },
+  { month: 'Sat', income: 25, expenses: 20 },
+  { month: 'Sun', income: 19, expenses: 15 },
+];
+
+export const monthlyCashflowData = [
+  { month: 'Jan', income: 85, expenses: 65 },
+  { month: 'Feb', income: 90, expenses: 70 },
+  { month: 'Mar', income: 78, expenses: 68 },
+  { month: 'Apr', income: 95, expenses: 60 },
+  { month: 'May', income: 88, expenses: 72 },
+  { month: 'Jun', income: 92, expenses: 75 },
+  { month: 'Jul', income: 100, expenses: 65 },
+  { month: 'Aug', income: 85, expenses: 70 },
+  { month: 'Sep', income: 90, expenses: 68 },
+  { month: 'Oct', income: 95, expenses: 78 },
+  { month: 'Nov', income: 82, expenses: 80 },
+  { month: 'Dec', income: 98, expenses: 85 },
 ];

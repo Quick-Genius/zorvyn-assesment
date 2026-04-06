@@ -1,7 +1,15 @@
 import { useState } from 'react';
+import { useApp } from '../../context/AppContext';
+import { dailyExpenseData, weeklyExpenseData, monthlyExpenseData } from '../../data/mockCharts';
 
-function ExpenseDonut({ categories }) {
+function ExpenseDonut() {
   const [period, setPeriod] = useState('weekly');
+  const { getCurrencySymbol } = useApp();
+  
+  const categories = period === 'daily' ? dailyExpenseData : 
+                     period === 'weekly' ? weeklyExpenseData : 
+                     monthlyExpenseData;
+  
   const total = categories.reduce((sum, cat) => sum + cat.amount, 0);
   
   return (
@@ -26,7 +34,7 @@ function ExpenseDonut({ categories }) {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
             <span className="block text-2xl font-headline font-bold dark:text-stone-200">
-              ${(total / 1000).toFixed(1)}k
+              {getCurrencySymbol()}{(total / 1000).toFixed(1)}k
             </span>
             <span className="text-[10px] text-stone-400 dark:text-stone-500 uppercase tracking-widest">Total</span>
           </div>
@@ -36,19 +44,19 @@ function ExpenseDonut({ categories }) {
       <div className="flex gap-4 p-1 bg-surface-container-low dark:bg-stone-800 rounded-lg mb-8">
         <button 
           onClick={() => setPeriod('daily')}
-          className={`flex-1 py-1.5 text-xs font-medium ${period === 'daily' ? 'font-bold bg-white dark:bg-stone-700 rounded-md shadow-sm' : 'text-stone-500 dark:text-stone-400'}`}
+          className={`flex-1 py-1.5 text-xs font-medium ${period === 'daily' ? 'font-bold bg-white dark:bg-stone-700 rounded-md shadow-sm dark:text-stone-200' : 'text-stone-500 dark:text-stone-400'}`}
         >
           Daily
         </button>
         <button 
           onClick={() => setPeriod('weekly')}
-          className={`flex-1 py-1.5 text-xs font-medium ${period === 'weekly' ? 'font-bold bg-white dark:bg-stone-700 rounded-md shadow-sm' : 'text-stone-500 dark:text-stone-400'}`}
+          className={`flex-1 py-1.5 text-xs font-medium ${period === 'weekly' ? 'font-bold bg-white dark:bg-stone-700 rounded-md shadow-sm dark:text-stone-200' : 'text-stone-500 dark:text-stone-400'}`}
         >
           Weekly
         </button>
         <button 
           onClick={() => setPeriod('monthly')}
-          className={`flex-1 py-1.5 text-xs font-medium ${period === 'monthly' ? 'font-bold bg-white dark:bg-stone-700 rounded-md shadow-sm' : 'text-stone-500 dark:text-stone-400'}`}
+          className={`flex-1 py-1.5 text-xs font-medium ${period === 'monthly' ? 'font-bold bg-white dark:bg-stone-700 rounded-md shadow-sm dark:text-stone-200' : 'text-stone-500 dark:text-stone-400'}`}
         >
           Monthly
         </button>

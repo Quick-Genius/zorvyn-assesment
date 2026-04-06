@@ -44,7 +44,7 @@ function TransactionTable({ transactions }) {
                 <td className={`px-8 py-5 text-right font-bold ${
                   transaction.type === 'income' ? 'text-primary' : 'text-error'
                 }`}>
-                  {transaction.type === 'income' ? '+' : '-'}${transaction.amount.toFixed(2)}
+                  {transaction.type === 'income' ? '+' : '-'}₹{transaction.amount.toFixed(2)}
                 </td>
               </tr>
             ))}

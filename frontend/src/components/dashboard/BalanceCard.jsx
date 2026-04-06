@@ -1,4 +1,8 @@
+import { useApp } from '../../context/AppContext';
+
 function BalanceCard({ balance, cardNumber, changePercent }) {
+  const { getCurrencySymbol } = useApp();
+  
   return (
     <div className="md:col-span-2 lg:col-span-1 bg-surface-container-lowest dark:bg-stone-900 p-6 rounded-xl editorial-shadow relative overflow-hidden group">
       <div className="relative z-10">
@@ -10,7 +14,7 @@ function BalanceCard({ balance, cardNumber, changePercent }) {
           </div>
         </div>
         <h2 className="text-3xl font-headline font-bold text-on-surface dark:text-stone-200 mb-1">
-          ${balance.toLocaleString('en-US', { minimumFractionDigits: 2 })}
+          {getCurrencySymbol()}{balance.toLocaleString('en-IN', { minimumFractionDigits: 2 })}
         </h2>
         <p className="text-stone-400 dark:text-stone-500 font-mono text-xs tracking-widest mb-6">{cardNumber}</p>
         <div className="flex gap-3">

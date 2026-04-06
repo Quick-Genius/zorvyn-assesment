@@ -93,13 +93,13 @@ function FinancialChart({ monthlyData, weeklyData }) {
         <div>
           <p className="text-xs font-label uppercase tracking-widest text-stone-400 dark:text-stone-500 mb-1">Average Income</p>
           <p className="text-2xl font-headline font-extrabold text-primary dark:text-green-400">
-            ${(avgIncome * 100).toFixed(0)}
+            ₹{(avgIncome * 100).toFixed(0)}
           </p>
         </div>
         <div>
           <p className="text-xs font-label uppercase tracking-widest text-stone-400 dark:text-stone-500 mb-1">Average Expenses</p>
           <p className="text-2xl font-headline font-extrabold text-tertiary dark:text-red-400">
-            ${(avgExpenses * 100).toFixed(0)}
+            ₹{(avgExpenses * 100).toFixed(0)}
           </p>
         </div>
       </div>

@@ -1,4 +1,8 @@
+import { useApp } from '../../context/AppContext';
+
 function RecentTransactions({ transactions }) {
+  const { getCurrencySymbol } = useApp();
+  
   return (
     <div className="bg-surface-container-lowest dark:bg-stone-900 p-8 rounded-xl editorial-shadow">
       <div className="flex justify-between items-center mb-6">
@@ -16,7 +20,7 @@ function RecentTransactions({ transactions }) {
               <p className="text-[10px] text-stone-400">{transaction.category} • {transaction.time}</p>
             </div>
             <span className={`text-sm font-bold ${transaction.amount > 0 ? 'text-primary' : 'text-tertiary'}`}>
-              {transaction.amount > 0 ? '+' : ''}${Math.abs(transaction.amount).toFixed(2)}
+              {transaction.amount > 0 ? '+' : ''}{getCurrencySymbol()}{Math.abs(transaction.amount).toFixed(2)}
             </span>
           </div>
         ))}

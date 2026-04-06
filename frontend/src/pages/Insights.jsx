@@ -2,7 +2,6 @@ import SpendingCategory from '../components/insights/SpendingCategory';
 import CashflowChart from '../components/insights/CashflowChart';
 import AllocationDonut from '../components/insights/AllocationDonut';
 import InsightCard from '../components/insights/InsightCard';
-import { annualCashflowData } from '../data/mockCharts';
 
 function Insights() {
   return (
@@ -16,7 +15,7 @@ function Insights() {
       
       <div className="grid grid-cols-12 gap-6">
         <SpendingCategory />
-        <CashflowChart data={annualCashflowData} />
+        <CashflowChart />
         <AllocationDonut />
         
         <div className="col-span-12 lg:col-span-8 relative overflow-hidden bg-gradient-to-br from-primary to-primary-container dark:from-primary dark:to-primary-container rounded-xl p-8 shadow-[0_20px_40px_-12px_rgba(25,28,27,0.06)] text-white group">
@@ -29,7 +28,7 @@ function Insights() {
             <div className="space-y-2">
               <h3 className="text-xl font-bold font-manrope">Did you know?</h3>
               <p className="text-white/80 font-body leading-relaxed max-w-lg">
-                Users who set a <span className="font-bold text-white">"No-Spend Weekend"</span> once a month increase their annual savings by an average of 14%. Last month, you spent $342 on Sundays alone. Try a challenge this week!
+                Users who set a <span className="font-bold text-white">"No-Spend Weekend"</span> once a month increase their annual savings by an average of 14%. Last month, you spent ₹342 on Sundays alone. Try a challenge this week!
               </p>
               <button className="mt-4 px-6 py-2 bg-white dark:bg-stone-900 text-primary font-bold rounded-lg hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors shadow-lg active:opacity-80">
                 Set Challenge
@@ -57,8 +56,8 @@ function Insights() {
           <InsightCard 
             icon="payments"
             label="Avg Daily Spend"
-            value="$84.12"
-            description="Decreased by $12 since last week"
+            value="₹84.12"
+            description="Decreased by ₹12 since last week"
             iconColor="text-secondary"
           />
         </div>

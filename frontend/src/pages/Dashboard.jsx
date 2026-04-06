@@ -44,7 +44,7 @@ function Dashboard() {
           <div className="mb-6 md:mb-0">
             <h3 className="text-xl font-headline font-bold text-white">Optimize your savings today</h3>
             <p className="text-primary-fixed/80 dark:text-white/80 text-sm mt-1 max-w-md">
-              Our AI analysis shows you could save up to $450/month by adjusting your platform subscriptions.
+              Our AI analysis shows you could save up to ₹450/month by adjusting your platform subscriptions.
             </p>
           </div>
           <button className="bg-white dark:bg-stone-900 text-primary font-bold px-8 py-3 rounded-lg text-sm hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors shadow-xl">
@@ -55,7 +55,7 @@ function Dashboard() {
       </section>
       
       <aside className="col-span-12 lg:col-span-4 space-y-8">
-        <ExpenseDonut categories={expenseCategories} />
+        <ExpenseDonut />
         <RecentTransactions transactions={recentTransactions} />
       </aside>
     </div>

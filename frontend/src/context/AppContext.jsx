@@ -13,6 +13,11 @@ export function AppProvider({ children }) {
     return saved || 'admin';
   });
   
+  const [currency, setCurrency] = useState(() => {
+    const saved = localStorage.getItem('currency');
+    return saved || 'INR';
+  });
+  
   useEffect(() => {
     localStorage.setItem('darkMode', JSON.stringify(darkMode));
     if (darkMode) {
@@ -26,11 +31,35 @@ export function AppProvider({ children }) {
     localStorage.setItem('userRole', userRole);
   }, [userRole]);
   
+  useEffect(() => {
+    localStorage.setItem('currency', currency);
+  }, [currency]);
+  
   const toggleDarkMode = () => setDarkMode(prev => !prev);
   const toggleUserRole = () => setUserRole(prev => prev === 'admin' ? 'viewer' : 'admin');
   
+  const getCurrencySymbol = () => {
+    const symbols = {
+      'INR': '₹',
+      'USD': '$',
+      'EUR': '€',
+      'GBP': '£',
+      'JPY': '¥'
+    };
+    return symbols[currency] || '₹';
+  };
+  
   return (
-    <AppContext.Provider value={{ darkMode, toggleDarkMode, userRole, setUserRole, toggleUserRole }}>
+    <AppContext.Provider value={{ 
+      darkMode, 
+      toggleDarkMode, 
+      userRole, 
+      setUserRole, 
+      toggleUserRole,
+      currency,
+      setCurrency,
+      getCurrencySymbol
+    }}>
       {children}
     </AppContext.Provider>
   );
