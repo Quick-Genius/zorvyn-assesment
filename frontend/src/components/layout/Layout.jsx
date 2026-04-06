@@ -5,7 +5,7 @@ import WealthTicker from '../common/WealthTicker';
 
 function Layout() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background dark:bg-stone-950">
       <Sidebar />
       <Header />
       <main className="ml-64 pt-24 pb-12 px-8">

@@ -8,18 +8,18 @@ function WealthTicker() {
   ];
   
   return (
-    <footer className="fixed bottom-0 left-64 right-0 h-12 bg-white/60 backdrop-blur-md border-t border-outline-variant/10 z-30 flex items-center px-8 overflow-hidden">
+    <footer className="fixed bottom-0 left-64 right-0 h-12 bg-white/60 dark:bg-stone-900/60 backdrop-blur-md border-t border-outline-variant/10 dark:border-stone-800 z-30 flex items-center px-8 overflow-hidden">
       <div className="flex gap-12 whitespace-nowrap">
         {marketData.map((item, index) => (
           <div key={index} className="flex items-center gap-2">
-            <span className="text-[10px] font-bold text-stone-400 uppercase tracking-widest">
+            <span className="text-[10px] font-bold text-stone-400 dark:text-stone-500 uppercase tracking-widest">
               {item.symbol}
             </span>
-            <span className="text-[10px] font-bold text-on-surface">
+            <span className="text-[10px] font-bold text-on-surface dark:text-stone-200">
               {item.value}
             </span>
             <span className={`text-[10px] font-bold ${
-              item.type === 'up' ? 'text-primary' : 'text-tertiary'
+              item.type === 'up' ? 'text-primary dark:text-green-400' : 'text-tertiary dark:text-red-400'
             }`}>
               {item.change}
             </span>

@@ -8,6 +8,20 @@ export const monthlyChartData = [
   { month: 'Jul', income: 32, expenses: 24 },
   { month: 'Aug', income: 48, expenses: 28 },
   { month: 'Sep', income: 52, expenses: 36 },
+  { month: 'Oct', income: 45, expenses: 30 },
+  { month: 'Nov', income: 50, expenses: 35 },
+  { month: 'Dec', income: 58, expenses: 42 },
+];
+
+export const weeklyChartData = [
+  { month: 'Week 1', income: 12, expenses: 8 },
+  { month: 'Week 2', income: 15, expenses: 10 },
+  { month: 'Week 3', income: 18, expenses: 12 },
+  { month: 'Week 4', income: 14, expenses: 9 },
+  { month: 'Week 5', income: 16, expenses: 11 },
+  { month: 'Week 6', income: 20, expenses: 13 },
+  { month: 'Week 7', income: 17, expenses: 10 },
+  { month: 'Week 8', income: 19, expenses: 14 },
 ];
 
 export const expenseCategories = [
